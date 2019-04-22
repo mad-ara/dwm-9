@@ -75,7 +75,6 @@ static const char *twiddledisplayscmd[]  = { "xlayoutdisplay", NULL };
 
 #include <X11/XF86keysym.h>
 #include "push.c"
-#include "unfloat.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -95,12 +94,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Escape, view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY|ShiftMask,             XK_t,      unfloat,        {.v = &layouts[1]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_f,      unfloat,        {.v = &layouts[2]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_m,      unfloat,        {.v = &layouts[0]} },
-	{ MODKEY,                       XK_space,  unfloat,        {0} },
+	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
