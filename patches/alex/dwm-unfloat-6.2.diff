@@ -4,18 +4,18 @@ Date: Sat, 20 Apr 2019 22:01:56 +1000
 Subject: [PATCH] unfloat visible and optionally apply layout
 
 ---
- unfloat.c | 14 ++++++++++++++
+ unfloatvisible.c | 14 ++++++++++++++
  1 file changed, 14 insertions(+)
- create mode 100644 unfloat.c
+ create mode 100644 unfloatvisible.c
 
-diff --git a/unfloat.c b/unfloat.c
+diff --git a/unfloatvisible.c b/unfloatvisible.c
 new file mode 100644
 index 0000000..ff9b36a
 --- /dev/null
-+++ b/unfloat.c
++++ b/unfloatvisible.c
 @@ -0,0 +1,14 @@
 +void
-+unfloat(const Arg *arg)
++unfloatvisible(const Arg *arg)
 +{
 +    Client *c;
 +

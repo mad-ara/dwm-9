@@ -1,5 +1,5 @@
 void
-unfloat(const Arg *arg)
+unfloatvisible(const Arg *arg)
 {
     Client *c;
 
