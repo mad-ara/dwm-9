@@ -75,6 +75,7 @@ static const char *twiddledisplayscmd[]  = { "xlayoutdisplay", NULL };
 
 #include <X11/XF86keysym.h>
 #include "push.c"
+#include "unfloat.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
