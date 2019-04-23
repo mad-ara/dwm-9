@@ -91,12 +91,11 @@ static Key keys[] = {
 	{ MODKEY,                       23,                         focusstack,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             23,                         focusstack,     {.i = -1 } },
 	{ MODKEY,                       24,                         killclient,     {0} },
-	{ MODKEY,                       25,                         setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             25,                         unfloatvisible, {.v = &layouts[0]} },
-	{ MODKEY,                       26,                         setlayout,      {.v = &layouts[1]} },
-	{ MODKEY|ShiftMask,             26,                         unfloatvisible, {.v = &layouts[1]} },
-	{ MODKEY,                       27,                         setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       28,                         togglebar,      {0} },
+	{ MODKEY,                       26,                         setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             26,                         unfloatvisible, {.v = &layouts[0]} },
+	{ MODKEY,                       27,                         setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             27,                         unfloatvisible, {.v = &layouts[1]} },
+	{ MODKEY,                       28,                         setlayout,      {.v = &layouts[2]} },
 
 	{ MODKEY,                       33,                         setmfact,       {.f = +0.05} },
 
@@ -105,8 +104,9 @@ static Key keys[] = {
 
 	{ MODKEY,                       38,                         incnmaster,     {.i = +1 } },
 	{ MODKEY,                       39,                         incnmaster,     {.i = -1 } },
-	{ MODKEY,                       40,                         spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       41,                         spawn,          {.v = browsercmd } },
+	{ MODKEY,                       40,                         spawn,          {.v = browsercmd } },
+	{ MODKEY,                       41,                         spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       42,                         togglebar,      {0} },
 
 	{ MODKEY,                       44,                         setmfact,       {.f = -0.05} },
 	{ MODKEY,                       36,                         zoom,           {0} },
