@@ -101,6 +101,7 @@ static Key keys[] = {
 	{ MODKEY,                       23,                         focusstack,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             23,                         focusstack,     {.i = -1 } },
 	{ MODKEY,                       24,                         killclient,     {0} },
+	{ MODKEY,                       25,                         togglebar,      {0} },
 	{ MODKEY,                       26,                         setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             26,                         unfloatvisible, {.v = &layouts[0]} },
 	{ MODKEY,                       27,                         setlayout,      {.v = &layouts[1]} },
@@ -116,11 +117,10 @@ static Key keys[] = {
 	{ MODKEY,                       39,                         incnmaster,     {.i = -1 } },
 	{ MODKEY,                       40,                         spawn,          {.v = browsercmd } },
 	{ MODKEY,                       41,                         spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       42,                         togglebar,      {0} },
+	{ MODKEY,                       42,                         spawn,          {.v = termcmd } },
 
 	{ MODKEY,                       44,                         setmfact,       {.f = -0.05} },
 	{ MODKEY,                       36,                         zoom,           {0} },
-	{ MODKEY|ShiftMask,             36,                         spawn,          {.v = termcmd } },
 
 	{ MODKEY,                       52,                         focusmon,       {.i = -1 } },
 	{ MODKEY|ShiftMask,             52,                         tagmon,         {.i = -1 } },
