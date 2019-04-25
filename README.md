@@ -4,7 +4,7 @@
 
 lower: mod
 
-upper mod shift
+upper: mod shift
 
 ### alex
 
