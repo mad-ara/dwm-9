@@ -109,17 +109,17 @@ static Key keys[] = {
 	{ MODKEY,                       28,                         setlayout,      {.v = &layouts[2]} },
 
 	{ MODKEY,                       33,                         setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             33,                         incnmaster,     {.i = -1 } },
 
 	{ MODKEY|ShiftMask,             35,                         quit,           {0} },
 	{ MODKEY|ShiftMask,             49,                         spawn,          {.v = twiddledisplayscmd } },
 
-	{ MODKEY,                       38,                         incnmaster,     {.i = +1 } },
 	{ MODKEY,                       39,                         spawn,          {.v = browsercmd } },
 	{ MODKEY,                       40,                         spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       41,                         spawn,          {.v = termcmd } },
-	{ MODKEY,                       42,                         incnmaster,     {.i = -1 } },
 
 	{ MODKEY,                       44,                         setmfact,       {.f = -0.05} },
+	{ MODKEY|ShiftMask,             44,                         incnmaster,     {.i = +1 } },
 	{ MODKEY,                       36,                         zoom,           {0} },
 
 	{ MODKEY,                       52,                         focusmon,       {.i = -1 } },
