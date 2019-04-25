@@ -114,10 +114,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             49,                         spawn,          {.v = twiddledisplayscmd } },
 
 	{ MODKEY,                       38,                         incnmaster,     {.i = +1 } },
-	{ MODKEY,                       39,                         incnmaster,     {.i = -1 } },
-	{ MODKEY,                       40,                         spawn,          {.v = browsercmd } },
-	{ MODKEY,                       41,                         spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       42,                         spawn,          {.v = termcmd } },
+	{ MODKEY,                       39,                         spawn,          {.v = browsercmd } },
+	{ MODKEY,                       40,                         spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       41,                         spawn,          {.v = termcmd } },
+	{ MODKEY,                       42,                         incnmaster,     {.i = -1 } },
 
 	{ MODKEY,                       44,                         setmfact,       {.f = -0.05} },
 	{ MODKEY,                       36,                         zoom,           {0} },
