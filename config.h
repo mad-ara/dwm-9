@@ -9,8 +9,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:bold:size=11" };
-static const char dmenufont[]       = "monospace:bold:size=11";
+static const char *fonts[]          = { "monospace:size=11" };
+static const char dmenufont[]       = "monospace:size=11";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -23,7 +23,11 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6" };
+#ifdef HOST_duke
+static const char *tags[] = { "%", "7", "5", "3", "1", "9"};
+#else
+static const char *tags[] = { " %", "7", "5", "3", "1", "9 ", " 0", "2", "4", "6", "8", "` "};
+#endif
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -84,8 +88,14 @@ static Key keys[] = {
 	TAGKEYS(                        14,                                         4)
 	TAGKEYS(                        15,                                         5)
 
-	{ MODKEY,                       19,                         view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             19,                         tag,            {.ui = ~0 } },
+	TAGKEYS(                        16,                                         6)
+	TAGKEYS(                        17,                                         7)
+	TAGKEYS(                        18,                                         8)
+	TAGKEYS(                        19,                                         9)
+	/*{ MODKEY,                       19,                         view,           {.ui = ~0 } },*/
+	/*{ MODKEY|ShiftMask,             19,                         tag,            {.ui = ~0 } },*/
+	TAGKEYS(                        20,                                         10)
+	TAGKEYS(                        21,                                         11)
 	{ MODKEY|ShiftMask,             51,                         spawn,          {.v = lockcmd } },
 
 	{ MODKEY,                       23,                         focusstack,     {.i = +1 } },
