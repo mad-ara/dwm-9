@@ -3,6 +3,7 @@
 ## keys
 
 lower: mod
+
 upper mod shift
 
 ### alex
