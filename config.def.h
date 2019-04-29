@@ -1,5 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
+/* clion (clang?) gets upset with a quoted string being passed in from the command line */
+#define VERSION "6.2"
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
