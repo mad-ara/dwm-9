@@ -27,9 +27,9 @@ static const char *colors[][3]      = {
 
 /* tagging */
 #ifdef HOST_duke
-static const char *tags[] = { "%", "7", "5", "3", "1", "9"};
+static const char *tags[] = { "&", "[", "{", "}", "(", "="};
 #else
-static const char *tags[] = { " %", "7", "5", "3", "1", "9 ", " 0", "2", "4", "6", "8", "` "};
+static const char *tags[] = { "&", "[", "{", "}", "(", "=", "*", ")", "+", "]", "!", "#"};
 #endif
 
 static const Rule rules[] = {
