@@ -99,7 +99,8 @@ static Key keys[] = {
 	/*{ MODKEY|ShiftMask,             19,                         tag,            {.ui = ~0 } },*/
 	TAGKEYS(                        20,                                         10)
 	TAGKEYS(                        21,                                         11)
-	{ MODKEY|ShiftMask,             51,                         spawn,          {.v = lockcmd } },
+	{ MODKEY|ShiftMask,             22,                         spawn,          {.v = lockcmd } },
+	{ MODKEY|ShiftMask,             119,                        spawn,          {.v = lockcmd } },
 
 	{ MODKEY,                       23,                         focusstack,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             23,                         focusstack,     {.i = -1 } },
@@ -115,7 +116,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             33,                         incnmaster,     {.i = -1 } },
 
 	{ MODKEY|ShiftMask,             35,                         quit,           {0} },
-	{ MODKEY|ShiftMask,             49,                         spawn,          {.v = twiddledisplayscmd } },
+	{ MODKEY|ShiftMask,             51,                         spawn,          {.v = twiddledisplayscmd } },
 
 	{ MODKEY,                       39,                         spawn,          {.v = browsercmd } },
 	{ MODKEY,                       40,                         spawn,          {.v = dmenucmd } },
