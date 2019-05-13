@@ -83,7 +83,7 @@ static const char *twiddledisplayscmd[]  = { "xlayoutdisplay", NULL };
 #include "unfloat.c"
 static Key keys[] = {
 	/* modifier                     keycode                     function        argument */
-	{ MODKEY,                       9,                          view,           {0} },
+	{ MODKEY,                       49,                         view,           {0} },
 	TAGKEYS(                        10,                                         0)
 	TAGKEYS(                        11,                                         1)
 	TAGKEYS(                        12,                                         2)
