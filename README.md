@@ -18,12 +18,12 @@
 
 lower: mod
 
-upper: mod shift
+upper: mod ctrl
 
 ### alex
 
-![keys](/keyboard-layout-editor.com/uhk-ansi-dwm.png?raw=true)
+![keys](/keyboard-layout-editor.com/dwm-alex.png?raw=true)
 
 ### default
 
-![keys](/keyboard-layout-editor.com/uhk-ansi-dwm-default.png?raw=true)
+![keys](/keyboard-layout-editor.com/dwm-default.png?raw=true)
