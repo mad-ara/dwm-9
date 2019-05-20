@@ -29,7 +29,7 @@ static const char *colors[][3]      = {
 #ifdef HOST_duke
 static const char *tags[] = { "&", "[", "{", "}", "(", "="};
 #else
-static const char *tags[] = { "&", "[", "{", "}", "(", "=", "*", ")", "+", "]", "!", "#"};
+static const char *tags[] = { "&", "[", "{", "}", "(", "=", "*", ")", "+", "]", "!"};
 #endif
 
 static const Rule rules[] = {
@@ -57,8 +57,8 @@ static const Layout layouts[] = {
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ MODKEY|ShiftMask,             KEY,      toggleview,     {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask,           KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -82,69 +82,54 @@ static const char *twiddledisplayscmd[]  = { "xlayoutdisplay", NULL };
 #include "push.c"
 #include "unfloat.c"
 static Key keys[] = {
-	/* modifier                     keycode                     function        argument */
-	{ MODKEY,                       49,                         view,           {0} },
-	TAGKEYS(                        10,                                         0)
-	TAGKEYS(                        11,                                         1)
-	TAGKEYS(                        12,                                         2)
-	TAGKEYS(                        13,                                         3)
-	TAGKEYS(                        14,                                         4)
-	TAGKEYS(                        15,                                         5)
-
-	TAGKEYS(                        16,                                         6)
-	TAGKEYS(                        17,                                         7)
-	TAGKEYS(                        18,                                         8)
-	TAGKEYS(                        19,                                         9)
-	/*{ MODKEY,                       19,                         view,           {.ui = ~0 } },*/
-	/*{ MODKEY|ShiftMask,             19,                         tag,            {.ui = ~0 } },*/
-	TAGKEYS(                        20,                                         10)
-	TAGKEYS(                        21,                                         11)
-	{ MODKEY|ShiftMask,             22,                         spawn,          {.v = lockcmd } },
-	{ MODKEY|ShiftMask,             119,                        spawn,          {.v = lockcmd } },
-
-	{ MODKEY,                       23,                         focusstack,     {.i = +1 } },
-	{ MODKEY|ShiftMask,             23,                         focusstack,     {.i = -1 } },
-	{ MODKEY,                       24,                         killclient,     {0} },
-	{ MODKEY,                       25,                         togglebar,      {0} },
-	{ MODKEY,                       26,                         setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             26,                         unfloatvisible, {.v = &layouts[0]} },
-	{ MODKEY,                       27,                         setlayout,      {.v = &layouts[1]} },
-	{ MODKEY|ShiftMask,             27,                         unfloatvisible, {.v = &layouts[1]} },
-	{ MODKEY,                       28,                         setlayout,      {.v = &layouts[2]} },
-
-	{ MODKEY,                       33,                         setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             33,                         incnmaster,     {.i = -1 } },
-
-	{ MODKEY|ShiftMask,             35,                         quit,           {0} },
-	{ MODKEY|ShiftMask,             51,                         spawn,          {.v = twiddledisplayscmd } },
-
-	{ MODKEY,                       39,                         spawn,          {.v = browsercmd } },
-	{ MODKEY,                       40,                         spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       41,                         spawn,          {.v = termcmd } },
-
-	{ MODKEY,                       44,                         setmfact,       {.f = -0.05} },
-	{ MODKEY|ShiftMask,             44,                         incnmaster,     {.i = +1 } },
-	{ MODKEY,                       36,                         zoom,           {0} },
-
-	{ MODKEY,                       52,                         focusmon,       {.i = -1 } },
-	{ MODKEY|ShiftMask,             52,                         tagmon,         {.i = -1 } },
-	{ MODKEY,                       53,                         focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             53,                         tagmon,         {.i = +1 } },
-	{ MODKEY,                       54,                         focusstack,     {.i = +1 } },
-	{ MODKEY|ShiftMask,             54,                         pushdown,       {0} },
-	{ MODKEY,                       55,                         focusstack,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             55,                         pushup,         {0} },
-
-	{ MODKEY,                       65,                         setlayout,      {0} },
-	{ MODKEY|ShiftMask,             65,                         unfloatvisible, {0} },
-
-	{ 0,                            121,                        spawn,          {.v = audiomutecmd } },
-	{ 0,                            198,                        spawn,          {.v = audiomicmutecmd } },
-	{ 0,                            122,                        spawn,          {.v = audiolowervolumecmd } },
-	{ 0,                            123,                        spawn,          {.v = audioraisevolumecmd } },
-	{ 0,                            232,                        spawn,          {.v = backlightdeccmd } },
-	{ 0,                            233,                        spawn,          {.v = backlightinccmd } },
-	{ 0,                            235,                        spawn,          {.v = twiddledisplayscmd } },
+	/* modifier                     key                         function        argument */
+	{ MODKEY,                       XK_o,                       spawn,          {.v = browsercmd } },
+	{ MODKEY,                       XK_e,                       spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_u,                       spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_comma,                   togglebar,      {0} },
+	{ MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_j,                       pushdown,       {0} },
+	{ MODKEY,                       XK_k,                       focusstack,     {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_k,                       pushup,         {0} },
+	{ MODKEY,                       XK_h,                       setmfact,       {.f = -0.05} },
+	{ MODKEY|ControlMask,           XK_h,                       incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_l,                       setmfact,       {.f = +0.05} },
+	{ MODKEY|ControlMask,           XK_l,                       incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_Return,                  zoom,           {0} },
+	{ MODKEY,                       XK_Tab,                     view,           {0} },
+	{ MODKEY,                       XK_semicolon,               killclient,     {0} },
+	{ MODKEY,                       XK_period,                  setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ControlMask,           XK_period,                  unfloatvisible, {.v = &layouts[0]} },
+	{ MODKEY,                       XK_p,                       setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ControlMask,           XK_p,                       unfloatvisible, {.v = &layouts[1]} },
+	{ MODKEY,                       XK_y,                       setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_space,                   setlayout,      {0} },
+	{ MODKEY|ControlMask,           XK_space,                   unfloatvisible, {0} },
+	{ MODKEY,                       XK_apostrophe,              focusmon,       {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_apostrophe,              tagmon,         {.i = -1 } },
+	{ MODKEY,                       XK_q,                       focusmon,       {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_q,                       tagmon,         {.i = +1 } },
+	TAGKEYS(                        XK_ampersand,                               0)
+	TAGKEYS(                        XK_bracketleft,                             1)
+	TAGKEYS(                        XK_braceleft,                               2)
+	TAGKEYS(                        XK_braceright,                              3)
+	TAGKEYS(                        XK_parenleft,                               4)
+	TAGKEYS(                        XK_equal,                                   5)
+	TAGKEYS(                        XK_asterisk,                                6)
+	TAGKEYS(                        XK_parenright,                              7)
+	TAGKEYS(                        XK_plus,                                    8)
+	TAGKEYS(                        XK_bracketright,                            9)
+	TAGKEYS(                        XK_exclam,                                  10)
+	{ MODKEY|ControlMask,           XK_numbersign,              quit,           {0} },
+	{ MODKEY|ControlMask,           XK_at,                      spawn,          {.v = twiddledisplayscmd} },
+	{ MODKEY|ControlMask,           XK_backslash,               spawn,          {.v = lockcmd} },
+    { 0,                            XF86XK_AudioMute,           spawn,          {.v = audiomutecmd } },
+	{ 0,                            XF86XK_AudioMicMute,        spawn,          {.v = audiomicmutecmd } },
+	{ 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = audiolowervolumecmd } },
+	{ 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = audioraisevolumecmd } },
+	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          {.v = backlightdeccmd } },
+	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          {.v = backlightinccmd } },
+	{ 0,                            XF86XK_Display,             spawn,          {.v = twiddledisplayscmd } },
 };
 
 /* button definitions */
