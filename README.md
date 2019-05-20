@@ -5,7 +5,6 @@
 ### "upstream"
 
 * [focusonnetactive](https://dwm.suckless.org/patches/focusonnetactive/)
-* [keycodes](https://dwm.suckless.org/patches/keycodes/)
 * [pertag](https://dwm.suckless.org/patches/pertag/)
 * [push](https://dwm.suckless.org/patches/push/)
 * [systray](https://dwm.suckless.org/patches/systray/)
