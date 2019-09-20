@@ -120,10 +120,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_plus,                                    8)
 	TAGKEYS(                        XK_bracketright,                            9)
 	TAGKEYS(                        XK_exclam,                                  10)
-	{ MODKEY|ControlMask,           XK_numbersign,              quit,           {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_BackSpace,               quit,           {0} },
 	{ MODKEY|ControlMask,           XK_at,                      spawn,          {.v = twiddledisplayscmd} },
 	{ MODKEY|ControlMask,           XK_backslash,               spawn,          {.v = lockcmd} },
-    { 0,                            XF86XK_AudioMute,           spawn,          {.v = audiomutecmd } },
+	{ 0,                            XF86XK_AudioMute,           spawn,          {.v = audiomutecmd } },
 	{ 0,                            XF86XK_AudioMicMute,        spawn,          {.v = audiomicmutecmd } },
 	{ 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = audiolowervolumecmd } },
 	{ 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = audioraisevolumecmd } },
