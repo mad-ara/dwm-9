@@ -77,6 +77,7 @@ static const char *audioraisevolumecmd[]  = { "pulseaudio-ctl", "up", NULL };
 static const char *backlightdeccmd[]  = { "xbacklight", "-10", NULL };
 static const char *backlightinccmd[]  = { "xbacklight", "+10", NULL };
 static const char *twiddledisplayscmd[]  = { "xlayoutdisplay", NULL };
+static const char *twiddledisplaysmirrorcmd[]  = { "xlayoutdisplay", "-m", NULL };
 
 #include <X11/XF86keysym.h>
 #include "push.c"
@@ -122,6 +123,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_exclam,                                  10)
 	{ MODKEY|ControlMask|ShiftMask, XK_BackSpace,               quit,           {0} },
 	{ MODKEY|ControlMask,           XK_at,                      spawn,          {.v = twiddledisplayscmd} },
+	{ MODKEY|ControlMask|ShiftMask, XK_at,                      spawn,          {.v = twiddledisplaysmirrorcmd} },
 	{ MODKEY|ControlMask,           XK_backslash,               spawn,          {.v = lockcmd} },
 	{ 0,                            XF86XK_AudioMute,           spawn,          {.v = audiomutecmd } },
 	{ 0,                            XF86XK_AudioMicMute,        spawn,          {.v = audiomicmutecmd } },
