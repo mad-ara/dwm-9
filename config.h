@@ -26,7 +26,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "$", "&", "[", "{", "}", "(" };
+static const char *tags[] = { "&", "[", "{", "}", "(" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -106,12 +106,11 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_apostrophe,              tagmon,         {.i = -1 } },
 	{ MODKEY,                       XK_q,                       focusmon,       {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_q,                       tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_dollar,                                  0)
-	TAGKEYS(                        XK_ampersand,                               1)
-	TAGKEYS(                        XK_bracketleft,                             2)
-	TAGKEYS(                        XK_braceleft,                               3)
-	TAGKEYS(                        XK_braceright,                              4)
-	TAGKEYS(                        XK_parenleft,                               5)
+	TAGKEYS(                        XK_ampersand,                               0)
+	TAGKEYS(                        XK_bracketleft,                             1)
+	TAGKEYS(                        XK_braceleft,                               2)
+	TAGKEYS(                        XK_braceright,                              3)
+	TAGKEYS(                        XK_parenleft,                               4)
 	{ MODKEY|ControlMask|ShiftMask, XK_BackSpace,               quit,           {0} },
 	{ MODKEY|ControlMask,           XK_at,                      spawn,          {.v = twiddledisplayscmd} },
 	{ MODKEY|ControlMask|ShiftMask, XK_at,                      spawn,          {.v = twiddledisplaysmirrorcmd} },
